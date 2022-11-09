@@ -6,7 +6,7 @@ using namespace std;
 
 
 videogames::videogames():generalMedia() {
-  publisher = " ";
+  strcpy(publisher, " ");
   rating = 0;
 }
 
@@ -15,18 +15,18 @@ videogames::videogames(char* newTitle, int newYear, char* newPublisher, double n
   rating = newRating;
 }
 
-videogames::getPublisher() {
+char* videogames::getPublisher() {
   return publisher;
 }
 
-videogames::getRating() {
+double videogames::getRating() {
   return rating;
 }
 
-videogames::setPublisher(char* newPublisher) {
-  publisher = newPublisher;
+void videogames::setPublisher(char* newPublisher) {
+  memcpy(publisher, newPublisher, strlen(newPublisher)+1);
 }
 
-videogames::setRating(double newRating) {
+void videogames::setRating(double newRating) {
   rating = newRating;
 }

@@ -1,8 +1,10 @@
+#ifndef VIDEOGAMES_H
+#define VIDEOGAMES_H
 #include <iostream>
+#include "generalMedia.h"
 
-using namespace std;
 
-class videogames : generalMedia {
+class videogames : public generalMedia {
  public:
   videogames();
   videogames(char* newTitle, int newYear, char* newPublisher, double newRating);
@@ -14,4 +16,5 @@ class videogames : generalMedia {
  protected:
   char* publisher;
   double rating;
-}
+};
+#endif

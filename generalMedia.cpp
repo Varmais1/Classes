@@ -6,7 +6,7 @@
 using namespace std;
 
 generalMedia::generalMedia() {
-  title = " ";
+  strcpy(title, " ");
   year = 0;
 }
 
@@ -15,18 +15,18 @@ generalMedia::generalMedia(char* newTitle, int newYear) {
   year = newYear;
 }
 
-generalMedia::getTitle() {
+char* generalMedia::getTitle() {
   return title;
 }
 
-generalMedia::getYear() {
+int generalMedia::getYear() {
   return year;
 }
 
-generalMedia::setTitle(char* newTitle) {
-  title = newTitle;
+void generalMedia::setTitle(char* newTitle) {
+  memcpy(title,newTitle, strlen(newTitle)+1);
 }
 
-generalMedia::setYear(int newYear) {
+void generalMedia::setYear(int newYear) {
   year = newYear;
 }

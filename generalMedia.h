@@ -1,3 +1,5 @@
+#ifndef GENERALMEDIA_H
+#define GENERALMEDIA_H
 #include <iostream>
 
 using namespace std;
@@ -14,11 +16,5 @@ class generalMedia {
  protected:
   char* title;
   int year;
-}
-
-
-
-
-
-
-}
+};
+#endif
