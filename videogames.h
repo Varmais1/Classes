@@ -8,10 +8,10 @@ class videogames : public generalMedia {
  public:
   videogames();
   videogames(char* newTitle, int newYear, char* newPublisher, double newRating);
-  char* getPublisher();
-  double getRating();
-  void setPublisher(char* newPublisher);
-  void setRating(double newRating);
+  virtual char* getPublisher();
+  virtual double getRating();
+  virtual void setPublisher(char* newPublisher);
+  virtual void setRating(double newRating);
 
  protected:
   char* publisher;
