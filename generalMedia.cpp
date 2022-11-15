@@ -10,8 +10,9 @@ generalMedia::generalMedia() {
   year = 0;
 }
 
-generalMedia::generalMedia(char* newTitle, int newYear) {
-  title = newTitle;
+generalMedia::generalMedia(char newTitle[150], int newYear) {
+  title = new char[150];
+  strcpy(title,newTitle);
   year = newYear;
 }
 
@@ -23,10 +24,14 @@ int generalMedia::getYear() {
   return year;
 }
 
-void generalMedia::setTitle(char* newTitle) {
-  memcpy(title,newTitle, strlen(newTitle)+1);
+void generalMedia::setTitle(char newTitle[150]) {
+  strcpy(title,newTitle);
 }
 
 void generalMedia::setYear(int newYear) {
   year = newYear;
+}
+
+generalMedia::~generalMedia() {
+  delete title;
 }

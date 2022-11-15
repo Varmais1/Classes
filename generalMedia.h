@@ -7,11 +7,12 @@ using namespace std;
 class generalMedia {
  public:
   generalMedia();
-  generalMedia(char* newTitle, int newYear);
-  char* getTitle();
-  int getYear();
-  void setTitle(char* newTitle);
-  void setYear(int newYear);
+  generalMedia(char newTitle[150], int newYear);
+  virtual char* getTitle();
+  virtual int getYear();
+  virtual void setTitle(char newTitle[150]);
+  virtual void setYear(int newYear);
+  virtual ~generalMedia();
 
  protected:
   char* title;

@@ -8,9 +8,11 @@ music::music():generalMedia() {
   strcpy(publisher, " ");
 }
 
-music::music(char* newTitle, int newYear, char* theArtist, double newDuration, char* newPublisher):generalMedia(newTitle,newYear) {
-  artist = theArtist;
-  publisher = newPublisher;
+music::music(char newTitle[150], int newYear, char theArtist[150], double newDuration, char newPublisher[150]):generalMedia(newTitle,newYear) {
+  artist = new char[150];
+  strcpy(artist, theArtist);
+  publisher = new char[150];
+  strcpy(publisher, newPublisher);
   duration = newDuration;
 }
 
@@ -26,14 +28,20 @@ double music::getDuration() {
   return duration;
 }
 
-void music::setArtist(char* newArtist) {
-  memcpy(artist, newArtist, strlen(newArtist)+1);
+void music::setArtist(char newArtist[150]) {
+  strcpy(artist, newArtist);
 }
 
-void music::setPublisher(char* newPublisher) {
-  memcpy(publisher, newPublisher, strlen(newPublisher)+1);
+void music::setPublisher(char newPublisher[150]) {
+  strcpy(publisher,newPublisher);
 }
 
 void music::setDuration(double newDuration) {
   duration = newDuration;
+}
+
+music::~music() {
+  generalMedia::~generalMedia();
+  delete publisher;
+  delete artist;
 }

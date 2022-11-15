@@ -10,8 +10,9 @@ videogames::videogames():generalMedia() {
   rating = 0;
 }
 
-videogames::videogames(char* newTitle, int newYear, char* newPublisher, double newRating):generalMedia(newTitle, newYear) {
-  publisher = newPublisher;
+videogames::videogames(char newTitle[150], int newYear, char newPublisher[150], double newRating):generalMedia(newTitle, newYear) {
+  publisher = new char[150];
+  strcpy(publisher, newPublisher);
   rating = newRating;
 }
 
@@ -23,10 +24,15 @@ double videogames::getRating() {
   return rating;
 }
 
-void videogames::setPublisher(char* newPublisher) {
-  memcpy(publisher, newPublisher, strlen(newPublisher)+1);
+void videogames::setPublisher(char newPublisher[150]) {
+  strcpy(publisher, newPublisher);
 }
 
 void videogames::setRating(double newRating) {
   rating = newRating;
+}
+
+videogames::~videogames() {
+  generalMedia::~generalMedia();
+  delete publisher;
 }

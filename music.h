@@ -7,14 +7,14 @@
 class music: public generalMedia {
  public:
   music();
-  music(char* newTitle, int newYear, char* theArtist, double newDuration, char* newPublisher);
-  char* getArtist();
+  music(char newTitle[150], int newYear, char theArtist[150], double newDuration, char newPublisher[150]);
+  virtual char* getArtist();
   virtual double getDuration();
   virtual char* getPublisher();
-  void setArtist(char* newArtist);
+  virtual void setArtist(char newArtist[150]);
   virtual void setDuration(double newDuration);
-  virtual void setPublisher(char* newPublisher);
-
+  virtual void setPublisher(char newPublisher[150]);
+  virtual ~music();
   
  protected:
   char* artist;

@@ -7,11 +7,12 @@
 class videogames : public generalMedia {
  public:
   videogames();
-  videogames(char* newTitle, int newYear, char* newPublisher, double newRating);
+  videogames(char newTitle[150], int newYear, char newPublisher[150], double newRating);
   virtual char* getPublisher();
   virtual double getRating();
-  virtual void setPublisher(char* newPublisher);
+  virtual void setPublisher(char newPublisher[150]);
   virtual void setRating(double newRating);
+  virtual ~videogames();
 
  protected:
   char* publisher;
