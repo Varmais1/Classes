@@ -32,7 +32,17 @@ void videogames::setRating(double newRating) {
   rating = newRating;
 }
 
+void videogames::print() {
+  cout << endl;
+  cout << "Videogame: " << endl;
+  cout << "Title: " << title << endl;
+  cout << "Year: " << year << endl;
+  cout << "Publisher: " << publisher << endl;
+  cout << "Rating: " << rating << " stars." << endl;
+  cout << endl;
+}
+
+
 videogames::~videogames() {
-  generalMedia::~generalMedia();
-  delete publisher;
+  delete[] publisher;
 }

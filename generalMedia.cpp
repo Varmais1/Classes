@@ -33,5 +33,5 @@ void generalMedia::setYear(int newYear) {
 }
 
 generalMedia::~generalMedia() {
-  delete title;
+  delete[] title;
 }

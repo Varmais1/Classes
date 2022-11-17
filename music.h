@@ -14,6 +14,7 @@ class music: public generalMedia {
   virtual void setArtist(char newArtist[150]);
   virtual void setDuration(double newDuration);
   virtual void setPublisher(char newPublisher[150]);
+  virtual void print();
   virtual ~music();
   
  protected:

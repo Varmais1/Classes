@@ -12,6 +12,7 @@ class videogames : public generalMedia {
   virtual double getRating();
   virtual void setPublisher(char newPublisher[150]);
   virtual void setRating(double newRating);
+  virtual void print();
   virtual ~videogames();
 
  protected:

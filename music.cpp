@@ -40,8 +40,17 @@ void music::setDuration(double newDuration) {
   duration = newDuration;
 }
 
+void music::print() {
+  cout << endl;
+  cout << "Music: " << endl;
+  cout << "Title: " << title << endl;
+  cout << "Year created: " << year << endl;
+  cout << "Duration: " << duration << " seconds." << endl;
+  cout << "Publisher: " << publisher << endl;
+  cout << endl;
+}
+
 music::~music() {
-  generalMedia::~generalMedia();
-  delete publisher;
-  delete artist;
+  delete[] publisher;
+  delete[] artist;
 }

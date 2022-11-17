@@ -13,6 +13,7 @@ class movies : public generalMedia {
   virtual void setDirector(char newDirector[150]);
   virtual void setDuration(double newDuration);
   virtual void setRating(double newRating);
+  virtual void print();
   virtual ~movies();
 
  protected:

@@ -39,7 +39,18 @@ void movies::setRating(double newRating) {
   rating = newRating;
 }
 
+void movies::print() {
+  cout << endl;
+  cout << "Movie: " << endl;
+  cout << "Title: " << title << endl;
+  cout << "Year released: " << year << endl;
+  cout << "Director: " << director << endl;
+  cout << "Duration: " << duration << " minutes." << endl;
+  cout << "Rating: " << rating << " stars." << endl;
+  cout << endl;
+}
+
+
 movies::~movies() {
-  generalMedia::~generalMedia();
-  delete director;
+  delete[] director;
 }
