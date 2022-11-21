@@ -12,6 +12,7 @@ class generalMedia {
   virtual int getYear();
   virtual void setTitle(char newTitle[150]);
   virtual void setYear(int newYear);
+  virtual void print();
   virtual ~generalMedia();
 
  protected:

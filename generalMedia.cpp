@@ -32,6 +32,10 @@ void generalMedia::setYear(int newYear) {
   year = newYear;
 }
 
+void generalMedia::print() {
+
+}
+
 generalMedia::~generalMedia() {
   delete[] title;
 }
