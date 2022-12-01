@@ -1,7 +1,14 @@
+/* Name: Ishaan Varma
+   Date: 12/1/2022
+   Purpose: Where the music class functions are implemented
+ */
 #include <iostream>
 #include <cstring>
 #include "music.h"
 
+
+
+//constructors
 music::music():generalMedia() {
   strcpy(artist, " ");
   duration = 0;
@@ -16,6 +23,7 @@ music::music(char newTitle[150], int newYear, char theArtist[150], double newDur
   duration = newDuration;
 }
 
+//getters and setters
 char* music::getArtist() {
   return artist;
 }
@@ -40,6 +48,7 @@ void music::setDuration(double newDuration) {
   duration = newDuration;
 }
 
+//print function
 void music::print() {
   cout << endl;
   cout << "Music: " << endl;
@@ -50,6 +59,7 @@ void music::print() {
   cout << endl;
 }
 
+//destructor
 music::~music() {
   delete[] publisher;
   delete[] artist;

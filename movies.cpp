@@ -1,12 +1,20 @@
+/*Name: Ishaan Varma
+Date: 12/1/2022
+Purpose: Where the functions of the movies class is implemented
+ */
 #include <iostream>
 #include <cstring>
 #include "movies.h"
 
+
+
+//consturctors
 movies::movies():generalMedia() {
   strcpy(director, " ");
   rating = 0;
   duration = 0;
 }
+
 
 movies::movies(char newTitle[150], int newYear, char newDirector[150], double newDuration, double newRating):generalMedia(newTitle,newYear) {
   director = new char[150];
@@ -15,6 +23,7 @@ movies::movies(char newTitle[150], int newYear, char newDirector[150], double ne
   rating = newRating;
 }
 
+//getters and setters
 char* movies::getDirector() {
   return director;
 }
@@ -39,6 +48,7 @@ void movies::setRating(double newRating) {
   rating = newRating;
 }
 
+//print function
 void movies::print() {
   cout << endl;
   cout << "Movie: " << endl;
@@ -50,7 +60,7 @@ void movies::print() {
   cout << endl;
 }
 
-
+//destructor
 movies::~movies() {
   delete[] director;
 }

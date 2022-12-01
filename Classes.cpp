@@ -1,3 +1,7 @@
+/* Name: Ishaan Varma
+   Date: 12/1/2022
+   Purpose: Where the main program runs
+*/
 #include <iostream>
 #include <cstring>
 #include <vector>
@@ -5,13 +9,15 @@
 #include "music.h"
 #include "movies.h"
 
-
+//for using input and output
 using namespace std;
 
+//used to make a word lowercase
 void lowercase(char sentence[]);
 
 
 int main() {
+  //variables to store certain attributes of media
   char publisher[150];
   char title[150];
   char artist[150];
@@ -20,20 +26,28 @@ int main() {
   char type[20];
   double duration;
   double rating;
+  //stores all of the media
   vector<generalMedia*> media;
+  //boolean which determines whether the while loop runs or not
   bool run = true;
+  //where the users command is stored
   char command[10] = {'d','e','f','a','u','l','t'};
+  //where the program is run
   while(run == true) {
+    //gets the users command
     cout << "Type add if you wish to add a form of media, search if you wish to find a work, delete in order to delete a work, and quit if you wish to quit." << endl;
     lowercase(command);
     cin.get(command,150);
     cin.ignore();
     cout << endl;
+    //if the users command is add:
     if(strcmp(command, "add") == 0) {
+      //get which type of media to add
       cout << "What type of media would you like to add?" << endl;
       cin.get(type,20);
       cin.get();
       lowercase(type);
+      //for each type, get the variables needed, initialize the media, and push it to the vector
       if(strcmp(type, "videogames") == 0 || strcmp(type, "videogame") == 0) {
 	cout << "What is the title of this videogame?" << endl;
 	cin.get(title, 150);
@@ -90,10 +104,13 @@ int main() {
 	media.push_back((generalMedia*)movie);
       }
     }
+    //if the command is search:
     else if(strcmp(command, "search") == 0) {
+      //get the title of the media.
       cout << "What is the title of the media you want to find?" << endl;
       cin.get(title, 150);
       cin.ignore();
+      //loop through the vector and find the media and print out its details
       for(auto i = media.begin(); i !=media.end(); i++) {
 	if(strcmp(title, (*i)->getTitle()) == 0) {
           (*i)->print();
@@ -103,10 +120,13 @@ int main() {
     
       
     }
+    //if the command is delete:
     else if(strcmp(command, "delete") == 0) {
+      //get the title of the media.
       cout << "What is the title of the media you wish to delete?" << endl;
       cin.get(title, 150);
       cin.ignore();
+      //loop through the vector, and if the media which needs to be deleted is found, delete it and remove it from the vector
       for(auto i = media.begin(); i != media.end(); i++) {
 	if(strcmp(title, (*i)->getTitle()) == 0) {
 	  delete *i;
@@ -115,13 +135,16 @@ int main() {
 	}
       }
     }
+    //if the command is quit:
     else if(strcmp(command, "quit") == 0) {
+      //delete everything in the media vector
       for(auto i = media.begin(); i!= media.end(); i++) {
 	delete *i;
       }
+      //stop the while loop by making the condition false.
       run = false;
     }
-    
+    //reset command to blank
     strcmp(command, "          ");
 
 
@@ -134,7 +157,7 @@ int main() {
   return 0;
 }
 
-
+//makes every letter in a string lowercase, also gets rid of all special characters
 void lowercase(char sentence[]) {
   //iterating variable
    int i = 0;

@@ -1,10 +1,14 @@
+/* Name: Ishaan Varma
+   Date: 12/1/2022
+   Purpose: Where the functions for the videogame class is implemented.
+ */
 #include <iostream>
 #include "videogames.h"
 #include <cstring>
 
 using namespace std;
 
-
+//constructors
 videogames::videogames():generalMedia() {
   strcpy(publisher, " ");
   rating = 0;
@@ -16,6 +20,7 @@ videogames::videogames(char newTitle[150], int newYear, char newPublisher[150], 
   rating = newRating;
 }
 
+//getters and setters
 char* videogames::getPublisher() {
   return publisher;
 }
@@ -32,6 +37,7 @@ void videogames::setRating(double newRating) {
   rating = newRating;
 }
 
+//prints out the media is a videogame, title, year, publisher, and rating
 void videogames::print() {
   cout << endl;
   cout << "Videogame: " << endl;
@@ -42,7 +48,7 @@ void videogames::print() {
   cout << endl;
 }
 
-
+//destructor
 videogames::~videogames() {
   delete[] publisher;
 }

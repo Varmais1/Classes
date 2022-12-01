@@ -1,3 +1,7 @@
+/* Name: Ishaan Varma
+   Date: 12/1/2022
+   Purpose: Where the generalMedia class's functions are implemented
+ */
 #include <iostream>
 #include "generalMedia.h"
 #include <cstring>
@@ -5,6 +9,7 @@
 
 using namespace std;
 
+//constructors, getters, setters, and destructor
 generalMedia::generalMedia() {
   strcpy(title, " ");
   year = 0;
@@ -19,6 +24,7 @@ generalMedia::generalMedia(char newTitle[150], int newYear) {
 char* generalMedia::getTitle() {
   return title;
 }
+
 
 int generalMedia::getYear() {
   return year;
